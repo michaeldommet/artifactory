@@ -1,0 +1,541 @@
+config: 
+ offlineMode: false
+ helpLinksEnabled: true
+ fileUploadMaxSizeMb: 100
+ revision: 3
+ dateFormat: "dd-MM-yy HH:mm:ss z"
+ addons: 
+  showAddonsInfo: true
+  showAddonsInfoCookie: 1579262092764
+ security: 
+  anonAccessEnabled: false
+  hideUnauthorizedResources: false
+  passwordSettings: 
+   encryptionPolicy: supported
+   expirationPolicy: 
+    enabled: false
+    passwordMaxAge: 60
+    notifyByEmail: true
+   resetPolicy: 
+    enabled: true
+    maxAttemptsPerAddress: 3
+    timeToBlockInMinutes: 60
+  ldapSettings: ""
+  ldapGroupSettings: ""
+  userLockPolicy: 
+   enabled: false
+   loginAttempts: 5
+  accessClientSettings: ""
+  buildGlobalBasicReadAllowed: false
+  buildGlobalBasicReadForAnonymous: false
+ backups: 
+  backup: 
+   - 
+   key: "backup-daily"
+    enabled: true
+    cronExp: "0 0 2 ? * MON-FRI"
+    retentionPeriodHours: 0
+    createArchive: false
+    excludedRepositories: ""
+    sendMailOnError: true
+    excludeNewRepositories: false
+    precalculate: false
+   - 
+   key: "backup-weekly"
+    enabled: false
+    cronExp: "0 0 2 ? * SAT"
+    retentionPeriodHours: 336
+    createArchive: false
+    excludedRepositories: ""
+    sendMailOnError: true
+    excludeNewRepositories: false
+    precalculate: false
+ indexer: 
+  enabled: false
+  cronExp: "0 23 5 * * ?"
+ localRepositories: 
+  localRepository: 
+   - 
+   key: "artifactory-build-info"
+    type: buildinfo
+    description: "Build Info repository"
+    includesPattern: "**/*"
+    repoLayoutRef: "simple-default"
+    dockerApiVersion: V2
+    forceNugetAuthentication: false
+    blackedOut: false
+    handleReleases: true
+    handleSnapshots: true
+    maxUniqueSnapshots: 0
+    maxUniqueTags: 0
+    blockPushingSchema1: true
+    suppressPomConsistencyChecks: true
+    propertySets: 
+     propertySetRef: artifactory
+    archiveBrowsingEnabled: false
+    snapshotVersionBehavior: unique
+    localRepoChecksumPolicyType: "client-checksums"
+    calculateYumMetadata: false
+    yumRootDepth: 0
+    debianTrivialLayout: false
+    enableFileListsIndexing: false
+   - 
+   key: "generic-local"
+    type: generic
+    includesPattern: "**/*"
+    repoLayoutRef: "simple-default"
+    dockerApiVersion: V2
+    forceNugetAuthentication: false
+    blackedOut: false
+    handleReleases: true
+    handleSnapshots: true
+    maxUniqueSnapshots: 0
+    maxUniqueTags: 0
+    blockPushingSchema1: true
+    suppressPomConsistencyChecks: true
+    propertySets: ""
+    archiveBrowsingEnabled: false
+    snapshotVersionBehavior: unique
+    localRepoChecksumPolicyType: "client-checksums"
+    calculateYumMetadata: false
+    yumRootDepth: 0
+    debianTrivialLayout: false
+    enableFileListsIndexing: false
+ remoteRepositories: ""
+ virtualRepositories: ""
+ distributionRepositories: ""
+ releaseBundlesRepositories: ""
+ proxies: ""
+ reverseProxies: 
+  reverseProxy: 
+   key: direct
+   webServerType: direct
+   artifactoryAppContext: artifactory
+   publicAppContext: artifactory
+   serverName: localhost
+   serverNameExpression: 
+    "_xsi:nil": true
+   sslCertificate: 
+    "_xsi:nil": true
+   sslKey: 
+    "_xsi:nil": true
+   dockerReverseProxyMethod: path
+   useHttps: false
+   useHttp: true
+   sslPort: 443
+   httpPort: 8080
+   reverseProxyRepositories: ""
+   artifactoryServerName: artifactory
+   upStreamName: artifactory
+   artifactoryPort: 8081
+ propertySets: 
+  propertySet: 
+   name: artifactory
+   visible: false
+   properties: 
+    property: 
+     name: licenses
+     closedPredefinedValues: true
+     multipleChoice: true
+     predefinedValues: 
+      predefinedValue: 
+       - 
+   value: "AFL-3.0"
+        defaultValue: false
+       - 
+   value: "AGPL-V3"
+        defaultValue: false
+       - 
+   value: "APL-1.0"
+        defaultValue: false
+       - 
+   value: "Apache-2.0"
+        defaultValue: false
+       - 
+   value: "Apache-1.0"
+        defaultValue: false
+       - 
+   value: "Apache-1.1"
+        defaultValue: false
+       - 
+   value: "APSL-2.0"
+        defaultValue: false
+       - 
+   value: "Artistic-License-2.0"
+        defaultValue: false
+       - 
+   value: Attribution
+        defaultValue: false
+       - 
+   value: "BSL-1.0"
+        defaultValue: false
+       - 
+   value: "CA-TOSL-1.1"
+        defaultValue: false
+       - 
+   value: "CDDL-1.0"
+        defaultValue: false
+       - 
+   value: "CDDL-1.0.1"
+        defaultValue: false
+       - 
+   value: "CDDL-1.1"
+        defaultValue: false
+       - 
+   value: Codehaus
+        defaultValue: false
+       - 
+   value: "CCAG-2.5"
+        defaultValue: false
+       - 
+   value: "CPAL-1.0"
+        defaultValue: false
+       - 
+   value: "CUAOFFICE-1.0"
+        defaultValue: false
+       - 
+   value: Day
+        defaultValue: false
+       - 
+   value: "Day-Addendum"
+        defaultValue: false
+       - 
+   value: "Bouncy-Castle"
+        defaultValue: false
+       - 
+   value: EUDATAGRID
+        defaultValue: false
+       - 
+   value: Enovi
+        defaultValue: false
+       - 
+   value: "CPL-1.0"
+        defaultValue: false
+       - 
+   value: "LGPL-2.1"
+        defaultValue: false
+       - 
+   value: "LGPL-3.0"
+        defaultValue: false
+       - 
+   value: Historical
+        defaultValue: false
+       - 
+   value: HSQLDB
+        defaultValue: false
+       - 
+   value: "IBMPL-1.0"
+        defaultValue: false
+       - 
+   value: "IPAFont-1.0"
+        defaultValue: false
+       - 
+   value: ISC
+        defaultValue: false
+       - 
+   value: "Lucent-1.02"
+        defaultValue: false
+       - 
+   value: MirOS
+        defaultValue: false
+       - 
+   value: "MS-PL"
+        defaultValue: false
+       - 
+   value: "MS-RL"
+        defaultValue: false
+       - 
+   value: "JA-SIG"
+        defaultValue: false
+       - 
+   value: BSD
+        defaultValue: false
+       - 
+   value: MIT
+        defaultValue: false
+       - 
+   value: JSON
+        defaultValue: false
+       - 
+   value: "Motosoto-0.9.1"
+        defaultValue: false
+       - 
+   value: "Eclipse-1.0"
+        defaultValue: false
+       - 
+   value: ECL2
+        defaultValue: false
+       - 
+   value: "Eiffel-2.0"
+        defaultValue: false
+       - 
+   value: JTidy
+        defaultValue: false
+       - 
+   value: "JTA-Specification-1.0.1B"
+        defaultValue: false
+       - 
+   value: "Entessa-1.0"
+        defaultValue: false
+       - 
+   value: "EUPL-1.1"
+        defaultValue: false
+       - 
+   value: Fair
+        defaultValue: false
+       - 
+   value: "Frameworx-1.0"
+        defaultValue: false
+       - 
+   value: "GPL-2.0"
+        defaultValue: false
+       - 
+   value: "GPL-2.0+CE"
+        defaultValue: false
+       - 
+   value: "GPL-3.0"
+        defaultValue: false
+       - 
+   value: "Mozilla-1.1"
+        defaultValue: false
+       - 
+   value: Multics
+        defaultValue: false
+       - 
+   value: "NASA-1.3"
+        defaultValue: false
+       - 
+   value: NTP
+        defaultValue: false
+       - 
+   value: NAUMEN
+        defaultValue: false
+       - 
+   value: Nethack
+        defaultValue: false
+       - 
+   value: "Nokia-1.0a"
+        defaultValue: false
+       - 
+   value: "NOSL-3.0"
+        defaultValue: false
+       - 
+   value: "OCLC-2.0"
+        defaultValue: false
+       - 
+   value: "Openfont-1.1"
+        defaultValue: false
+       - 
+   value: Opengroup
+        defaultValue: false
+       - 
+   value: OpenSymphony
+        defaultValue: false
+       - 
+   value: "OSL-3.0"
+        defaultValue: false
+       - 
+   value: "PHP-3.0"
+        defaultValue: false
+       - 
+   value: PostgreSQL
+        defaultValue: false
+       - 
+   value: "Public Domain"
+        defaultValue: false
+       - 
+   value: "Public Domain - SUN"
+        defaultValue: false
+       - 
+   value: PythonPL
+        defaultValue: false
+       - 
+   value: PythonSoftFoundation
+        defaultValue: false
+       - 
+   value: "QTPL-1.0"
+        defaultValue: false
+       - 
+   value: "Real-1.0"
+        defaultValue: false
+       - 
+   value: "RPL-1.5"
+        defaultValue: false
+       - 
+   value: RicohPL
+        defaultValue: false
+       - 
+   value: "SimPL-2.0"
+        defaultValue: false
+       - 
+   value: Sleepycat
+        defaultValue: false
+       - 
+   value: "SUNPublic-1.0"
+        defaultValue: false
+       - 
+   value: "Sybase-1.0"
+        defaultValue: false
+       - 
+   value: TMate
+        defaultValue: false
+       - 
+   value: "UoI-NCSA"
+        defaultValue: false
+       - 
+   value: "IU-Extreme-1.1.1"
+        defaultValue: false
+       - 
+   value: "VovidaPL-1.0"
+        defaultValue: false
+       - 
+   value: W3C
+        defaultValue: false
+       - 
+   value: wxWindows
+        defaultValue: false
+       - 
+   value: Xnet
+        defaultValue: false
+       - 
+   value: "ZPL-2.0"
+        defaultValue: false
+       - 
+   value: ZLIB
+        defaultValue: false
+       - 
+   value: TPL
+        defaultValue: false
+       - 
+   value: "Not Searched"
+        defaultValue: false
+ repoLayouts: 
+  repoLayout: 
+   - 
+   name: "maven-2-default"
+    artifactPathPattern: "[orgPath]/[module]/[baseRev](-[folderItegRev])/[module]-[baseRev](-[fileItegRev])(-[classifier]).[ext]"
+    distinctiveDescriptorPathPattern: true
+    descriptorPathPattern: "[orgPath]/[module]/[baseRev](-[folderItegRev])/[module]-[baseRev](-[fileItegRev])(-[classifier]).pom"
+    folderIntegrationRevisionRegExp: SNAPSHOT
+    fileIntegrationRevisionRegExp: "SNAPSHOT|(?:(?:[0-9]{8}.[0-9]{6})-(?:[0-9]+))"
+   - 
+   name: "ivy-default"
+    artifactPathPattern: "[org]/[module]/[baseRev](-[folderItegRev])/[type]s/[module](-[classifier])-[baseRev](-[fileItegRev]).[ext]"
+    distinctiveDescriptorPathPattern: true
+    descriptorPathPattern: "[org]/[module]/[baseRev](-[folderItegRev])/[type]s/ivy-[baseRev](-[fileItegRev]).xml"
+    folderIntegrationRevisionRegExp: "\\d{14}"
+    fileIntegrationRevisionRegExp: "\\d{14}"
+   - 
+   name: "gradle-default"
+    artifactPathPattern: "[org]/[module]/[baseRev](-[folderItegRev])/[module]-[baseRev](-[fileItegRev])(-[classifier]).[ext]"
+    distinctiveDescriptorPathPattern: true
+    descriptorPathPattern: "[org]/[module]/ivy-[baseRev](-[fileItegRev]).xml"
+    folderIntegrationRevisionRegExp: "\\d{14}"
+    fileIntegrationRevisionRegExp: "\\d{14}"
+   - 
+   name: "maven-1-default"
+    artifactPathPattern: "[org]/[type]s/[module]-[baseRev](-[fileItegRev])(-[classifier]).[ext]"
+    distinctiveDescriptorPathPattern: true
+    descriptorPathPattern: "[org]/[type]s/[module]-[baseRev](-[fileItegRev]).pom"
+    folderIntegrationRevisionRegExp: ".+"
+    fileIntegrationRevisionRegExp: ".+"
+   - 
+   name: "nuget-default"
+    artifactPathPattern: "[orgPath]/[module]/[module].[baseRev](-[fileItegRev]).nupkg"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "npm-default"
+    artifactPathPattern: "[orgPath]/[module]/[module]-[baseRev](-[fileItegRev]).tgz"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "bower-default"
+    artifactPathPattern: "[orgPath]/[module]/[module]-[baseRev](-[fileItegRev]).[ext]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "vcs-default"
+    artifactPathPattern: "[orgPath]/[module]/[refs<tags|branches>]/[baseRev]/[module]-[baseRev](-[fileItegRev])(-[classifier]).[ext]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: "[a-zA-Z0-9]{40}"
+   - 
+   name: "sbt-default"
+    artifactPathPattern: "[org]/[module]/(scala_[scalaVersion<.+>])/(sbt_[sbtVersion<.+>])/[baseRev]/[type]s/[module](-[classifier]).[ext]"
+    distinctiveDescriptorPathPattern: true
+    descriptorPathPattern: "[org]/[module]/(scala_[scalaVersion<.+>])/(sbt_[sbtVersion<.+>])/[baseRev]/[type]s/ivy.xml"
+    folderIntegrationRevisionRegExp: "\\d{14}"
+    fileIntegrationRevisionRegExp: "\\d{14}"
+   - 
+   name: "simple-default"
+    artifactPathPattern: "[orgPath]/[module]/[module]-[baseRev].[ext]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "composer-default"
+    artifactPathPattern: "[orgPath]/[module]/[module]-[baseRev](-[fileItegRev]).[ext]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "conan-default"
+    artifactPathPattern: "[org]/[module]/[baseRev]/[channel<[^/]+>]/[folderItegRev]/(package/[package_id<[^/]+>]/[fileItegRev]/)?[remainder<(?:.+)>]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: "[^/]+"
+    fileIntegrationRevisionRegExp: "[^/]+"
+   - 
+   name: "puppet-default"
+    artifactPathPattern: "[orgPath]/[module]/[orgPath]-[module]-[baseRev].tar.gz"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "go-default"
+    artifactPathPattern: "[orgPath]/[module]/@v/v[refs].zip"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+   - 
+   name: "build-default"
+    artifactPathPattern: "[orgPath]/[module](-[fileItegRev]).[ext]"
+    distinctiveDescriptorPathPattern: false
+    folderIntegrationRevisionRegExp: ".*"
+    fileIntegrationRevisionRegExp: ".*"
+ remoteReplications: ""
+ localReplications: ""
+ gcConfig: 
+  cronExp: "0 0 /4 * * ?"
+ cleanupConfig: 
+  cronExp: "0 12 5 * * ?"
+ virtualCacheCleanupConfig: 
+  cronExp: "0 12 0 * * ?"
+ folderDownloadConfig: 
+  enabled: false
+  enabledForAnonymous: false
+  maxDownloadSizeMb: 1024
+  maxFiles: 5000
+  maxConcurrentRequests: 10
+ trashcanConfig: 
+  enabled: true
+  allowPermDeletes: false
+  retentionPeriodDays: 14
+ replicationsConfig: 
+  blockPushReplications: false
+  blockPullReplications: false
+ bintrayApplications: ""
+ sumoLogicConfig: 
+  enabled: false
+ releaseBundlesConfig: 
+  incompleteCleanupPeriodHours: 720
+ signedUrlConfig: 
+  maxValidForSeconds: 31536000
+ downloadRedirectConfig: 
+  fileMinimumSize: 1
+ _xmlns: "http://artifactory.jfrog.org/xsd/2.2.4"
+ "_xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance"
+ "_xsi:schemaLocation": "http://www.jfrog.org/xsd/artifactory-v2_2_4.xsd"
