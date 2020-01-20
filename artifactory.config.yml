@@ -90,3 +90,29 @@ localRepositories:   #Local repositories configuration
     suppressPomConsistencyChecks: true   #When deploying an artifact to a repository, Artifactory verifies that the value set for groupId:artifactId:version in the POM is consistent with the deployed path. If there is a conflict between these then Artifcatory will reject the deployment.
     downloadRedirect:   #Settings for redirecting download requests for direct download from cloud storage
       enabled: false 
+  docker-local-repo:   
+    type: docker    
+    checksumPolicyType: client-checksums  
+    description: "local docker repo"   
+    dockerApiVersion: V2   
+    excludesPattern:  
+    includesPattern:   
+    maxUniqueSnapshots: 0   
+    maxUniqueTags: 0   
+    notes: "Hello world 2"   
+    repoLayout: simple-default   
+    snapshotVersionBehavior: unique   
+    xray:   
+      enabled: false   
+    yumGroupFileNames: yumGroup1   
+    yumRootDepth: 0   
+    blackedOut: false   
+    calculateYumMetadata: false   
+    debianTrivialLayout: false  
+    enableFileListsIndexing: false   
+    forceNugetAuthentication: false  
+    handleReleases: true   
+    handleSnapshots: true   
+    suppressPomConsistencyChecks: true   
+    downloadRedirect:   
+      enabled: true 
