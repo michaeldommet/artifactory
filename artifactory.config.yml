@@ -118,7 +118,7 @@ localRepositories:   #Local repositories configuration
       enabled: true 
       
   rpm-local-repo:   
-    type: rpm    
+    type: yum    
     checksumPolicyType: client-checksums  
     description: "local rpm repo"   
     dockerApiVersion: V2   
