@@ -65,7 +65,7 @@ indexer:
   cronExp: "0 23 5 * * ?"
 localRepositories:   #Local repositories configuration
   my-local-repo:   #The local repository name
-    type: maven    #The package type
+    type: maven    #The package type | gradle | ivy | helm | sbt | nuget | gems | npm | bower | debian | composer | pypi | docker | vagrant | gitlfs | yum | conan | chef | puppet | generic   #The package type
     checksumPolicyType: client-checksums   #Determines how Artifactory behaves when a client checksum for a deployed resource is missing or conflicts with the locally calculated checksum
     description: "Hello world"   #A free text field that describes the content and purpose of the repository
     dockerApiVersion: V2   #Only for Docker repositories. The Docker API version
@@ -116,12 +116,10 @@ localRepositories:   #Local repositories configuration
     suppressPomConsistencyChecks: true   
     downloadRedirect:   
       enabled: true 
-      
   rpm-local-repo:   
     type: yum    
     checksumPolicyType: client-checksums  
-    description: "local rpm repo"   
-    dockerApiVersion: V2   
+    description: "local rpm repo"    
     excludesPattern:  
     includesPattern:   
     maxUniqueSnapshots: 0   
