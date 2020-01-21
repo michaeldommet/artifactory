@@ -141,3 +141,28 @@ localRepositories:   #Local repositories configuration
     suppressPomConsistencyChecks: true   
     downloadRedirect:   
       enabled: true 
+  rpm-repo-demp:   
+    type: yum    
+    checksumPolicyType: client-checksums  
+    description: "local rpm repo"    
+    excludesPattern:  
+    includesPattern:   
+    maxUniqueSnapshots: 0   
+    maxUniqueTags: 0   
+    notes: "Hello world 2"   
+    repoLayout: simple-default   
+    snapshotVersionBehavior: unique   
+    xray:   
+      enabled: false   
+    yumGroupFileNames: yumGroup1   
+    yumRootDepth: 0   
+    blackedOut: false   
+    calculateYumMetadata: false   
+    debianTrivialLayout: false  
+    enableFileListsIndexing: false   
+    forceNugetAuthentication: false  
+    handleReleases: true   
+    handleSnapshots: true   
+    suppressPomConsistencyChecks: true   
+    downloadRedirect:   
+      enabled: true 
